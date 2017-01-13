@@ -1,0 +1,26 @@
+/** @component header */
+
+.header-box
+  box-shadow 0 -3px 9px #000;
+  background-color $white
+
+  display flex
+  align-items center
+  justify-content space-between
+
+  width 100%
+  height 70px
+
+.header-logo
+  > .title
+    color $gray-very-dark
+    font-size rem(41px)
+    font-family 'Varela Round', sans-serif
+    font-weight 300
+    letter-spacing -1px
+
+  > .title:before
+    content $site-title-small
+
+    +above('m')
+      content $site-title

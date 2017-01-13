@@ -1,0 +1,99 @@
+//
+// Variables
+// --------------------------------------------------
+
+//== Site Title
+$site-title = 'Erick Bogarin'
+$site-title-small = '</> EB'
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base =              1.428571429 // 20/14
+$white =                         #fff
+$black =                         #000
+$red =                           #d9534f
+$orange =                        #f0ad4e
+$yellow =                        #ffd500
+$green =                         #5cb85c
+$blue =                          #0275d8
+$teal =                          #5bc0de
+$pink =                          #ff5b77
+$purple =                        #613d7c
+
+$light-red =                     #ff6347
+$light-yellow =                  #f7f7f2
+$dark-blue =                     #3e474f
+
+// Create grayscale
+$gray-dark =                     #292b2c
+$gray-very-dark =                #333
+$gray =                          #464a4c
+$gray-light =                    #f2f2f2
+$gray-lighter =                  #eceeef
+$gray-lightest =                 #f7f7f9
+$gray-light-blue =               #edeff0
+
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg =                      $gray-light
+$body-color =                   $gray-dark
+$inverse-bg =                   $gray-dark
+$inverse-color =                $gray-lighter
+// Links
+//
+// Style anchor elements.
+
+$link-color =                   $blue
+$link-decoration =              none
+$link-hover-color =             darken($blue, 15%)
+$link-hover-decoration =        underline
+
+//== Grid system
+//
+//## Responsive grid.
+
+//== Rupture setup
+//## A few variables are exposed by rupture that can be customized
+//** Slice media queries with no effort
+rupture.scale =                 0 400px 600px 800px 1050px 1800px
+//** A list of strings that correspond to their index location in rupture.scale
+rupture.scale-names =           'xs' 's' 'm' 'l' 'xl' 'hd'
+
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width =            30px
+
+//== Container sizes
+//
+//## Define the maximum width of `.container` for different screen sizes.
+// Small screen / mobile
+$container-xs =                 400px
+// Medium screen / tablet
+$container-sm =                 600px
+
+// Medium screen / desktop
+$container-md =                 800px
+// Large screen / wide desktop
+$container-lg =                 1050px
+// Huge screen / hd
+$container-hd =                 1800px
+
+
+//== Spacing
+//
+//## Control the default styling of most elements.
+//
+
+$spacer =   1rem
+$spacers = {
+  '0': 0,
+  '1': $spacer,
+  '2': $spacer * 1.5,
+  '3': $spacer * 3,
+  '4': $spacer * 3.5
+}

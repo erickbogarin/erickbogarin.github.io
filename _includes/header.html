@@ -1,0 +1,24 @@
+<header class="header-box container-fluid" role="heading">
+
+  <h1 class="header-logo" role="logo" aria-label="Home Page">
+    <a class="title" href="/" aria-label="Erick Bogarin"></a>
+  </h1>
+
+  <nav class="navbar" role="navigation">
+    <ul class="nav-horizontal">
+      <li id="menu-open">
+        <div role="button" aria-label="Menu" tabindex="0">
+          <svg class="icon icon-menu"><use xlink:href="#icon-menu"></use></svg>
+        </div>
+        {% include site-nav.html %}
+      </li>
+      <li id="search-open">
+        <div role="button" aria-label="Search" tabindex="0">
+          <svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg>
+        </div>
+        {% include search-dialog.html %}
+      </li>
+    </ul>
+  </nav>
+
+</header>

@@ -1,0 +1,11 @@
+// Grid system
+//
+// Generate semantic grid columns with these mixins.
+
+// Centered container element
+container-fixed(gutter = $grid-gutter-width)
+  box-sizing: border-box;
+  margin-right auto
+  margin-left auto
+  padding-left floor((gutter / 2))
+  padding-right ceil((gutter / 2))

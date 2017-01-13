@@ -1,0 +1,29 @@
+//
+// Grid system
+// --------------------------------------------------
+
+
+// Container widths
+//
+// Set the container width, and override it for fixed navbars in media queries.
+
+.container
+  container-fixed()
+
+  +above('s')
+    width $container-xs
+
+  +above('m')
+    width $container-sm
+
+  +above('l')
+    width $container-md
+
+  +above('xl')
+    width $container-lg
+
+  +above('hd')
+    width $container-hd
+
+.container-fluid
+  container-fixed()

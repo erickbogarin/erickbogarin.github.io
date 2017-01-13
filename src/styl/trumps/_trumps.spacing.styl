@@ -1,0 +1,14 @@
+// Margin and Padding
+
+$props = { margin: 'm', padding: 'p' }
+
+for prop, abbrev in $props
+  for size, length in $spacers
+    .{abbrev}t-{size}
+      {prop}-top length !important
+    .{abbrev}l-{size}
+      {prop}-left length !important
+    .{abbrev}r-{size}
+      {prop}-right length !important
+    .{abbrev}b-{size}
+      {prop}-bottom length !important

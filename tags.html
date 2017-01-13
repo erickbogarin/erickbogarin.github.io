@@ -1,0 +1,47 @@
+---
+layout: default
+title: "#Tags"
+permalink: /tags/index.html
+description: "Procure os assuntos pelas tags."
+---
+
+<div class="post-area mb-4">
+
+  {% include header_post.html %}
+
+  <div class="tag-list text-center">
+  {% assign tags_list = site.tags %}
+    {% if tags_list.first[0] == null %}
+      {% for tag in tags_list %}
+        <a class="tag mt-2" href="#{{ tag | slugify }}">{{ tag }}</a>
+      {% endfor %}
+    {% else %}
+      {% for tag in tags_list %}
+        <a class="tag mt-2" href="#{{ tag[0] | slugify }}">{{ tag[0] }}</a>
+      {% endfor %}
+    {% endif %}
+  {% assign tags_list = nil %}
+  </div> <!-- end .tag-list -->
+
+  <div class="container mt-4">
+  {% for tag in site.tags  %}
+    <h3 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h3>
+    <ul class="list-group">
+      {% assign pages_list = tag[1] %}
+      {% for post in pages_list reversed %}
+        {% if post.title != null %}
+        {% if group == null or group == post.group %}
+        <li class="item text-link">
+          <a href="{{ site.url }}{{ post.url }}">{{ post.title }}<span class="entry-date pull-right"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %d, %Y" }}</time></a>
+        </li>
+        <hr>
+        {% endif %}
+        {% endif %}
+      {% endfor %}
+      {% assign pages_list = nil %}
+      {% assign group = nil %}
+    </ul> <!-- end .list-group -->
+  {% endfor %}
+  </div>
+
+</div>

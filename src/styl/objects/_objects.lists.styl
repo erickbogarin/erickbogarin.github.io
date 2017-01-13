@@ -1,0 +1,26 @@
+//
+// @object lists
+//
+
+// General style for lists
+.list-group
+  padding 0
+
+  > .item
+    border-top 1px solid white
+
+    &:last-child
+      border-bottom 1px solid white
+
+// List item witch have a link inside
+.nav-item
+
+  > .link
+    display block
+    font-weight 800
+
+    letter-spacing rem(2px)
+    padding rem(10px) 0
+
+    +above('l')
+      padding rem(15px) 0

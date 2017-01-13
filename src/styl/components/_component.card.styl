@@ -1,0 +1,73 @@
+// @component card
+
+//
+// Card component rendering two columns
+//
+.card-item
+  background-color $white
+  border-radius 5px
+  box-sizing border-box
+  box-shadow: 0 1px 0 0 rgba(0,0,0,0.1);
+
+  font-size rem(21px)
+
+  display flex
+  justify-content space-between
+
+  margin-bottom rem(30px)
+
+  > .left
+    flex 1
+    padding: 30px 30px 75px;
+
+  // Default rendering is hidden for mobile devices
+  > .right
+    display none
+
+    background-color #f7f7f2
+    position relative
+    text-align center
+
+    // Shows the rendering for screens above than 600px
+    +above('m')
+      display block
+
+// Displays the content of the post
+.card-content
+
+  > .title
+    color #4b5658
+
+  > .date
+    color #7b8b8e
+    font-size rem(14px)
+
+  > .description
+    color #576366
+    font-size .75em
+    line-height: 1.375rem;
+
+// Renders the area that identifies the category of the post
+.card-identity
+  max-width 50px
+  width 100%
+
+  +above('m')
+    max-width 150px
+
+  +above('l')
+    max-width 250px
+
+  > .logo
+    position absolute
+    top 50%
+    left 0
+    transform translateY(-50%)
+    width 50px
+    max-height 250px
+
+    +above('m')
+      width 150px
+
+    +above('l')
+      width 250px
