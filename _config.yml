@@ -11,6 +11,7 @@ github_username:  jekyll
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
 
 # html minify
 compress_html:
