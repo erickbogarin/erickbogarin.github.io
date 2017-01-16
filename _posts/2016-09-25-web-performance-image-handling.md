@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Effective Image Handling in Responsive Web Sites"
-date: 2016-09-25 19:13:30
+date: 2017-01-04 19:13:30
 description: "Improving UX Through Front-End Performance Optimization"
 main-class: 'misc'
 color: '#637a91'

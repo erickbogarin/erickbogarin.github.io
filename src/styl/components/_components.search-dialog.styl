@@ -12,6 +12,7 @@
   +mobile()
     margin-top 80px
 
+  // Input text
   > .field
     background-color transparent
     border 0
@@ -19,18 +20,24 @@
     border-radius 0
     background-clip padding-box
     color $white
+    margin-top rem(5px)
 
     &:focus
       outline 0
       box-shadow none
 
-  > .close
+  > .close, .label
     position absolute
     top -40px
+
+  > .close
     right 0
 
-    +mobile()
-      size(40, 40)
+  > .label
+    font-size 25px
+    left: 0
 
-    +tablet()
-      size(25, 25)
+// result area
+.search-list
+  li
+    list-style none

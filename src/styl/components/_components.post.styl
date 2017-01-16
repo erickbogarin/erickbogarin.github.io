@@ -25,3 +25,20 @@
 
   & li
     margin-left: rem(25px);
+
+  a
+    color $link-color
+    &:hover
+      color $link-hover-color
+      text-decoration $link-hover-decoration
+
+  .externalLink:after
+    background-size 100%
+    background-image url('../../assets/img/icons/share.svg')
+    content ''
+    color $link-color
+    display inline-block
+    margin-left rem(5px)
+    width rem(22px)
+    height rem(22px)
+

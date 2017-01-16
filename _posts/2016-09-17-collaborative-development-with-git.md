@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Collaborative development with Git"
-date: 2016-09-17 21:31:05
+date: 2016-12-12 21:31:05
 description: "consider the way that you contribute with teams, how important it is for large projects which requires organization and maintenance."
 main-class: 'dev'
 color: '#637a91'

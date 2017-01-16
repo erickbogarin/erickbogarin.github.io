@@ -1,4 +1,5 @@
 import '../../assets/js/zepto';
+import './helpers/target_blank.js';
 
 // Containers
 // Represents a place where events and elements communicate with each other

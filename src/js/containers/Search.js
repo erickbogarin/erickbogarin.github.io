@@ -16,7 +16,7 @@ export default ($element) => {
   *
   * Opens a hidden menu dialog to the screen
   */
-  $element.click(() => {
+  $element.on('click touchstart', () => {
     searchDialog.openSearchDialog();
   });
 
@@ -25,7 +25,7 @@ export default ($element) => {
   *
   * Hides the search dialog
   */
-  searchDialog.closeBtn.click((e) => {
+  searchDialog.closeBtn.on('click touchstart', (e) => {
     e.stopPropagation();
     searchDialog.closeSearchDialog();
   });
