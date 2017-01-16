@@ -16,6 +16,8 @@
 
   margin-bottom rem(30px)
 
+  animation scaleCard .5s
+
   > .left
     flex 1
     padding: 30px 30px 75px;
@@ -71,3 +73,11 @@
 
     +above('l')
       width 250px
+
+@keyframes scaleCard
+  0%
+    transform scale(0)
+
+  100%
+    0%
+    transform scale(1)
