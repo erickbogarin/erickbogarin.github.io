@@ -15,8 +15,8 @@ export default class MenuDialogComponent {
   }
 
   openMenu() {
-    this.$overlay.addClass('is-visible');
     this.$siteNav.addClass('is-visible');
+    this.$overlay.addClass('is-visible');
   }
 
   closeMenu() {
