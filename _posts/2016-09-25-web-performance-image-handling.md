@@ -51,7 +51,7 @@ The simplest way to succeed in this kind of optimization is using the  CSS3 `med
 }
 ```
 
-In this code snippet, we have an image for small devices and another for the desktop version. Also, you can easily deal with retina displays as shown above. The biggest advantage of this approach is that it does not rely on third-party libraries.
+In this code snippet, we have an image for small devices and another for the desktop version. Also, you can easily handle devices with retina display as shown above. The biggest advantage of this approach is that it does not rely on third-party libraries.
 
 #### Modern Browsers and Polyfills
 There are alternatives to frameworks  like [Picturefill](https://github.com/scottjehl/picturefill), which allows us to define elements and attributes with the file name you want to load, let's look at some examples:
@@ -77,11 +77,11 @@ There are alternatives to frameworks  like [Picturefill](https://github.com/scot
 If you are giving support for HTTP 1 protocol you certainly will have to consider reducing requests due to bottlenecks on the latency (RTT), especially on mobile devices due to RCC approach. I will not delve into these concepts here to avoid tiring and widespread reading, but I recommend that you research these issues better. So let's focus here on techniques in practice to minimize HTTP requests to speed up page load times.
 
 #### 1. Inline Resources
-This is a technique to reduce the number of requests on the script files, but we can also use it in small images such as logos, icons and SVG, these are files with the size of about 1, 2 or 3 KB. Keep on mind that in these cases, the cost of making a new request for a resource is much higher due to latency.
+This is a technique to reduce the number of requests of text files, but we can also use it in small images such as logos, icons and SVG, these are files with the size of about 1, 2 or 3 KB. Keep in mind that in these cases, the cost of making a new request for a resource is much higher due to latency.
 
 * `Base64 encoded images`
 
-There are several tools that perform this task, as the online tool [Base64-image](https://www.base64-image.de) that performs the conversion and then we can easily embed the encoding string using *css* properties or *img* elements, as shown below.
+There are several tools performing this kind of task, like the [Base64-image](https://www.base64-image.de) online tool which performs the conversion of the image and later on provides easily for us a embed encoding string to be used in *css* properties or *img* elementsx as shown below.
 
 ```css
 <img src="data:image/png;base64,iVBORw0KGgoAA">
@@ -100,15 +100,15 @@ In conclusion, you might be wondering is that when we put something directly in 
 This question is related to tcp segment size (~1.4 K) and the new proposed tcp initial size (10), so if we multiply these two values we will understand that the ideal size for a HTML file is less than 14 KB, it is a html with gzip and all built.
 
 #### 2. Sprites
-When we deal with static resources files such as css and js is common perform the concatenation of these to decrease the number of requests. Thinking in this way, we can concatenate images in the same way we do with css/js files. However, concatenate images is not so simple, but it is possible. The concatenation of images is also called `sprite`.
+When dealing with static resources such as css and js there is a constant routine to perform the concatenation of these files to decrease the number of requests. Following up this approach, we can concatenate images in the same way we do with css/js files. However, concatenate images is not so simple, but it is possible. The concatenation of images is also called `sprite`.
 
-Before getting started we could use Photoshop to concatenate the images, however we can automate this task with the popular [ImageMagick](http://www.imagemagick.org/) CLI with the following command:
+Before getting started we could use Photoshop to concatenate the images, however we can automate this task with the [ImageMagick](http://www.imagemagick.org/) CLI following the command bellow:
 
 ```sh
   $ convert src/assets/img/*.png -append dist/assets/img/sprite.png
 ```
 
-Now we need to use the new file and apply a unique background and then set with the help of DevTools the background-position for each corresponding image.
+At this moment we need to use the new file which was generated and apply a unique background setting up with DevTools the background-position for each corresponding picture.
 
 ```css
 .icon {
@@ -124,14 +124,14 @@ Now we need to use the new file and apply a unique background and then set with 
   background-position: -33px -5px;
 }
 ```
-This seems hard work to be done but some developers prefer this approach instead of looking for some automation tool because the css inside can be somewhat complicated when generated. This is a personal method, so if you prefer a tool to handle with this job its a valid choice too. Therefore, there is [Sprity](https://www.npmjs.com/package/sprity) plugin that can be used with some task manager or via CLI as shown below:
+This seems hard work to be done but some developers prefer this approach instead of looking for some automation tool because the css inside can be somewhat complicated when generated. This is a personal method, so if you prefer a tool for handling with this task you can make use of [Sprity](https://www.npmjs.com/package/sprity) plugin that can be adapted with some task manager or via CLI as shown below:
 
 ```sh
   # automatically finds the coordinates for us:
   $ sprity out/ images/*.png -s style.css
 ```
 
-There is another alternative for deal with sprites if you are using Sass with Compass through the [CSS Sprite](http://compass-style.org/reference/compass/helpers/sprites/) helpers used in the following code snippet below:
+There is another alternative for handling with sprites if you are using Sass with Compass through the [CSS Sprite](http://compass-style.org/reference/compass/helpers/sprites/) helpers shown in the following code snippet below:
 
 ```sass
 @import "compass"
