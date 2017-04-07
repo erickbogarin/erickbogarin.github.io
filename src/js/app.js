@@ -1,11 +1,11 @@
 import '../../assets/js/zepto';
-import './helpers/target_blank.js';
+import './helpers/target_blank';
 import './helpers/fastclick';
 
 // Containers
 // Represents a place where events and elements communicate with each other
-import SearchDialog from './containers/Search';
-import Menu from './containers/Menu';
+import searchDialog from './containers/search';
+import menu from './containers/menu';
 
-Menu($('#menu-open'));
-SearchDialog($('#search-open'));
+menu($('#menu-open'));
+searchDialog($('#search-open'));

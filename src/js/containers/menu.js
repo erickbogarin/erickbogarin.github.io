@@ -15,7 +15,7 @@ export default ($element) => {
   *
   * Opens the hidden menu
   */
-  $element.on('click touchstart', e => {
+  $element.on('click touchstart', (e) => {
     e.preventDefault();
     menuDialog.openMenu();
   });
