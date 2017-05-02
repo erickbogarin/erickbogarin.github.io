@@ -1,0 +1,41 @@
+
+// Base button styles
+.btn
+  position relative
+  display inline-block
+  padding 6px 12px
+  font-size $body-font-size
+  font-weight bold
+  line-height 20px // Specifically not inherit our `<body>` default
+  white-space nowrap
+  vertical-align middle
+  cursor pointer
+  user-select none
+  background-repeat repeat-x
+  background-position -1px -1px
+  background-size 110% 110%
+  border 1px solid transparentize($black, 0.8)
+  border-radius 0.25em
+  appearance none // Corrects inability to style clickable `input` types in iOS.
+
+  &:focus,
+  &:active
+    easing('in-quad')
+    border-color transparent
+
+
+.btn-success,
+.btn-success:visited
+  color: #fff;
+  background-color: #58d68d;
+  border-color: #58d68d;
+
+  &:hover,
+  &:focus
+    background-color lightness(#58d68d, 50%)
+
+.btn-lg
+  padding: 10px 16px;
+  font-size: 20px;
+  line-height: 1.33;
+  border-radius: 6px;

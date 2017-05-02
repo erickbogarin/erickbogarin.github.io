@@ -1,9 +1,13 @@
 <div class="overlay" id="search-overlay" aria-hidden="true"></div>
 
-<div class="search-dialog centered" data-state="is-hidden">
-  <label class="label" for="search-query">Search</label>
-  <input type="text" class="field input-lg" id="search-query" placeholder="Post, tags, etc...">
-  <svg class="icon close" aria-label><use xlink:href="#icon-close"></use></svg>
+<div class="search-dialog" data-state="is-hidden">
+  <div class="container search-header">
+    <form class="search-form" action="">
+      <label class="label" for="search-query">Find...</label>
+      <input type="text" class="field input-lg" id="search-query" placeholder="Post, tags, etc...">
+    </form>
+    <svg class="icon close" aria-label><use xlink:href="#icon-close"></use></svg>
+  </div>
 
-  <ul class="search-results search-list"></ul>
+  <ul class="container search-results search-list"></ul>
 </div>

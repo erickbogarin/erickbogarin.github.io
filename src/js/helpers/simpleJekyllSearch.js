@@ -5,7 +5,7 @@
             jsonFormat      : 'title,tags,url,date',
             template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{date}</time></span></a></article></li>',
             searchResults   : '.search-results',
-            searchResultsTitle   : '<h4>Results:</h4>',
+            searchResultsTitle   : '<h3>Results:</h3>',
             limit           : '10',
             noResults       : '<p>Ack!<br/><small>Nothing was found :(</small></p>'
         }, options);

@@ -1,0 +1,31 @@
+
+//
+// Greetings Component
+// --------------------------------------------------
+
+.greetings-area
+  display flex
+  flex-direction column
+  align-items center
+
+  +above('l')
+    clearfix()
+    flex-direction row
+    align-items center
+
+  > .legend
+    +above('l')
+      width 70%
+
+  > .action
+    +mobile()
+      padding-bottom 20px
+
+    +above('l')
+      width 30%
+      text-align: center
+
+.greetings-content
+  > .title
+    border-bottom: 1px solid black;
+    padding-bottom rem(15px)

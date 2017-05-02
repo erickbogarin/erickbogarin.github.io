@@ -13,9 +13,9 @@ export default class SearchDialogComponent {
   }
 
   openSearchDialog() {
-    this.$searchDialog.attr('data-state', null);
+    this.$searchDialog.attr('data-state', 'is-visible');
     this.$overlay.addClass('is-visible');
-    this.$searchDialog.find('input').focus();
+    //this.$searchDialog.find('input').focus();
     this.$query.simpleJekyllSearch();
   }
 
@@ -25,6 +25,6 @@ export default class SearchDialogComponent {
   }
 
   isEscKeyPressedWhenTheSearchDialogIsVisible(event) {
-    return event.keyCode === 27 && !this.$searchDialog.attr('data-state');
+    return event.keyCode === 27 && this.$searchDialog.data('state') === 'is-visible';
   }
 }
