@@ -44,11 +44,15 @@
     margin-top rem(20px)
     padding-bottom rem(15px)
 
+    +placeholder()
+      letter-spacing 5px
+
     &:focus
       outline 0
 
   > .label
     font-size rem(65px)
+    letter-spacing 15px
 
 .search-dialog[data-state="is-visible"]
   transform: translate3d(0%, 0, 0);

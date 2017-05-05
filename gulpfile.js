@@ -4,7 +4,7 @@ const cp = require('child_process');
 
 const $ = gulpLoadPlugins({
   pattern: '*',
-  rename: { 'autoprefixer-stylus': 'prefixer', 'vinyl-source-stream': 'source' },
+  rename: { 'autoprefixer-stylus': 'prefixer' },
 });
 
 /**
@@ -14,6 +14,7 @@ const jsFiles = 'src/js/**/*.js';
 const stylusFiles = 'src/styl/**/*.styl';
 
 const messages = {
+  pattern: '*',
   jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build',
 };
 
@@ -51,10 +52,12 @@ gulp.task('browser-sync', ['jekyll-build'], () => {
 gulp.task('stylus', () => {
   gulp.src('src/styl/main.styl')
     .pipe($.plumber())
+    .pipe($.sourcemaps.init())
     .pipe($.stylus({
       use: [$.koutoSwiss(), $.prefixer(), $.jeet(), $.rupture(), $.typographic()],
       compress: true,
     }))
+    .pipe($.sourcemaps.write())
     .pipe(gulp.dest('_site/assets/css/'))
     .pipe($.browserSync.reload({ stream: true }))
     .pipe(gulp.dest('assets/css'));
@@ -63,17 +66,24 @@ gulp.task('stylus', () => {
 /**
  * Javascript Task
  */
-gulp.task('js', () =>
-  $.browserify('./src/js/app.js')
-    .transform($.babelify, { presets: ['es2015'] })
-    .bundle()
-    //  Pass desired output filename to vinyl-source-stream
-    .pipe($.source('main.js'))
-    // Start piping stream to tasks!
-    .pipe($.streamify($.uglify()))
+gulp.task('js', () => {
+  gulp.src('./src/js/app.js')
+    .pipe($.plumber({
+      handleError: (err) => {
+        console.log(err); // eslint-disable-line no-console
+        this.emit('end');
+      },
+    }))
+    .pipe($.concat('main.js'))
+    .pipe($.browserify({
+      debug: true,
+      transform: ['babelify'],
+    }))
     .pipe(gulp.dest('_site/assets/js/'))
+    .pipe($.uglify())
     .pipe($.browserSync.reload({ stream: true }))
-    .pipe(gulp.dest('assets/js')));
+    .pipe(gulp.dest('assets/js'));
+});
 
 gulp.task('watch', () => {
   gulp.watch(stylusFiles, ['stylus']);
