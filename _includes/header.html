@@ -7,17 +7,17 @@
 
     <nav class="navbar" role="navigation">
       <ul class="nav-horizontal">
-        <li>
-          <div id="menu-open" role="button" aria-label="Menu" tabindex="0">
-            <a href=""><svg class="icon icon-menu"><use xlink:href="#icon-menu"></use></svg></a>
-          </div>
-          {% include site-nav.html %}
-        </li>
         <li id="search-open">
           <div role="button" aria-label="Search" tabindex="0">
             <svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg>
           </div>
           {% include search-dialog.html %}
+        </li>
+        <li>
+          <div id="menu-open" role="button" aria-label="Menu" tabindex="0">
+            <a href=""><svg class="icon icon-menu"><use xlink:href="#icon-menu"></use></svg></a>
+          </div>
+          {% include site-nav.html %}
         </li>
       </ul>
     </nav>
