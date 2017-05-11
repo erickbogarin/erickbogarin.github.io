@@ -16,8 +16,15 @@
 .icon-menu, .icon-search
   cursor pointer
 
+.icon-menu
+  transition .4s ease
+
+.icon-menu.is-visible
+  fill white
+  position relative
+  z-index 50
+
 .fa-icon
-  fill $gray
   size(50, 30)
 
 .fa-2x

@@ -1,14 +1,46 @@
 <div class="overlay" id="menu-overlay" aria-hidden="true"></div>
 
-<aside class="site-nav bg-red text-white" role="complementary">
-  <svg class="icon close" aria-label><use xlink:href="#icon-close"></use></svg>
-  <h2 class="title text-uppercase">Menu</h2>
+<aside class="site-nav" role="complementary">
+  <div class="header user-social">
+    <svg class="icon"><use xlink:href="#icon-github"></use></svg>
+    <svg class="icon"><use xlink:href="#icon-codepen"></use></svg>
+  </div>
+  <div class="profile dev-info">
+    <img class="image" src="https://image.freepik.com/free-icon/user-image-with-black-background_318-34564.jpg" alt="">
+    <p class="description">web developer w/ passion for frontend • loves writing about tech.</p>
+  </div>
   <nav class="menu" role="navigation">
-    <ul class="list-group">
-      <li class="nav-item item text-center"><a class="link" href="{{ site.url }}">Home</a></li>
-      <li class="nav-item item text-center"><a class="link" href="https://github.com/erickbogarin/resume">About me</a></li>
-      <li class="nav-item item text-center"><a class="link feed" href="{{ site.url }}/tags/" title="Atom/RSS feed">Tags</a></li>
-      <li class="nav-item item text-center"><a class="link feed" href="{{ site.url }}/feed.xml" title="Atom/RSS feed">Feed</a></li>
+    <ul class="">
+      <li class="page-item">
+        <svg class="icon">
+          <use xlink:href="#icon-home"></use>
+        </svg>
+        <a class="link" href="{{ site.url }}">Home</a>
+      </li>
+      <li class="page-item">
+        <svg class="icon">
+          <use xlink:href="#icon-code"></use>
+        </svg>
+        <a class="link" href="{{ site.url }}/blog/">Blog</a>
+      </li>
+      <li class="page-item">
+        <svg class="icon">
+          <use xlink:href="#icon-tags"></use>
+        </svg>
+        <a class="link" href="{{ site.url }}/tags/" title="Atom/RSS feed">Tags</a>
+      </li>
+      <li class="page-item">
+        <svg class="icon">
+          <use xlink:href="#icon-user"></use>
+        </svg>
+        <a class="link" href="https://github.com/erickbogarin/resume">About me</a>
+      </li>
+      <li class="page-item">
+        <svg class="icon">
+          <use xlink:href="#icon-feed"></use>
+        </svg>
+        <a class="link" href="{{ site.url }}/feed.xml" title="Atom/RSS feed">Feed</a>
+      </li>
     </ul>
   </nav>
 </aside>

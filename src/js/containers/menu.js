@@ -15,9 +15,9 @@ export default ($element) => {
   *
   * Opens the hidden menu
   */
-  $element.on('click touchstart', (e) => {
+  $element.on('click', (e) => {
     e.preventDefault();
-    menuDialog.openMenu();
+    menuDialog.toggleMenu();
   });
 
   /**
@@ -27,7 +27,7 @@ export default ($element) => {
   *
   * Hides the menu
   */
-  menuDialog.overlay.add(menuDialog.closeButton).on('click touchend', (e) => {
+  menuDialog.overlay.on('click', (e) => {
     e.stopPropagation();
 
     menuDialog.closeMenu();

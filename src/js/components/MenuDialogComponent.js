@@ -3,7 +3,7 @@ export default class MenuDialogComponent {
   constructor() {
     this.$overlay = $('#menu-overlay');
     this.$siteNav = $('.site-nav');
-    this.$closeButton = $('.close');
+    this.$menuButton = $('.icon-menu');
   }
 
   get overlay() {
@@ -14,13 +14,15 @@ export default class MenuDialogComponent {
     return this.$closeButton;
   }
 
-  openMenu() {
-    this.$siteNav.addClass('is-visible');
-    this.$overlay.addClass('is-visible');
+  toggleMenu() {
+    this.$siteNav.toggleClass('is-visible');
+    this.$overlay.toggleClass('is-visible');
+    this.$menuButton.toggleClass('is-visible');
   }
 
   closeMenu() {
     this.$overlay.removeClass('is-visible');
     this.$siteNav.removeClass('is-visible');
+    this.$menuButton.removeClass('is-visible');
   }
 }
