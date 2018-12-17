@@ -25,7 +25,7 @@
   &.is-visible
     transform: translate3d(0%, 0, 0);
 
-  > .header, .menu
+  > .header, .page-item
     padding 1rem 0 1rem 1rem
 
     +above('s')
@@ -56,6 +56,11 @@
 .page-item
   list-style-type none
   padding .75rem 0
+  transition: .2s
+
+  &:hover
+    background-color rgba(255, 255, 255, 0.1)
+    cursor pointer
 
   > .icon
     height 30px
